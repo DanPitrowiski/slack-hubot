@@ -44,15 +44,15 @@ squirrels = ["http://img.skitch.com/20100714-d6q52xajfh4cimxr3888yb77ru.jpg", "h
 
 module.exports = function(robot) {
   // Basic example of respond / send. If the user enters hi or hello the bot responds "Howdy!"
-  return robot.respond(/hi|hello/i, function(msg) {
-    return msg.send("Howdy!");
-  });
+  // return robot.respond(/hi|hello/i, function(msg) {
+  //   return msg.send("Howdy!");
+  // });
 
   // Random Example
   //If a user enters 'ship it' we return a random squirrel, which is popular for symbolizing shipping something with engineers
-  return robot.hear(/ship it/i, function(msg) {
-    return msg.send(msg.random(squirrels));
-  });
+  // return robot.hear(/ship it/i, function(msg) {
+  //   return msg.send(msg.random(squirrels));
+  // });
 
   return robot.hear(/food/i, function(msg) {
     return msg.send(msg.random(food));
