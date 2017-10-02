@@ -39,7 +39,7 @@ module.exports = function(robot) {
         msg.send(story.option1);
       },300);
       setTimeout(function(){
-        msg.send("Write to @redbot which option you choose. Go back a step with `back` or start over with `reset`";)
+        msg.send("Write to @redbot which option you choose. Go back a step with `back` or start over with `reset`");
       },300);
       setTimeout(function(){
         msg.send(story.image);
