@@ -102,7 +102,7 @@ function loadStory(){
       story.maintext = "You are in the break room at work listening to the TV. Suddenly a news flash comes on and some woman is babbling about a zombie virus.";
       story.option1 = "(1) Keep listening";
       story.option2 = "(2) Turn the TV off";
-      story.option3 = "Write to @adventure-bot which option you choose. Write 'back' to return to the previous step.";
+      story.option3 = "Write to @adventure-bot which option you chose. Go back a stpe with 'back' or start over with 'reset'";
       story.options = 3;
       story.image = "https://media.giphy.com/media/3xz2BuuYbARSNcBBsI/giphy.gif";
       whereAmI = 2;
@@ -140,5 +140,14 @@ function loadStory(){
         story.options = 3;
         whereAmI = 6;
         story.image = "https://media.giphy.com/media/yoJC2qNujv3gJWP504/giphy.gif";
+    }
+    if (whereAmI === 4.2){
+        story.maintext = "You eat the rest of your lunch and then start on Brad's. He'll never know. You fall asleep after your two meals... You wake up to Brad storming into the kitchen!";
+        story.option1 = "(1) Attack zombie Brad";
+        story.option2 = "(2) Attack Brad your boss";
+        story.option3 = "(3) Run away";
+        story.options = 3;
+        whereAmI = 7;
+        story.image = "https://media.giphy.com/media/po1HNtTPPrx5e/giphy.gif";
     }
 }
