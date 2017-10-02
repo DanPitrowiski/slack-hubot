@@ -47,4 +47,4 @@ EXAMPLES OF THE KEY HUBOT FUNCTIONS
 
   // Random Example
   //If a user enters 'ship it' we return a random squirrel, which is popular for symbolizing shipping something with engineers
-};
+// };
