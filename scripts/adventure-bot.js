@@ -35,9 +35,13 @@ module.exports = function(robot) {
     robot.respond(/start/i, function(msg) {
       loadStory();
       msg.send(story.maintext);
+      setTimeout(function(){},300);
       msg.send(story.option1);
+      setTimeout(function(){},300);
       if(story.options > 1){msg.send(story.option2)};
+      setTimeout(function(){},300);
       if(story.options > 2){msg.send(story.option3)};
+      setTimeout(function(){},300);
       msg.send(story.image);
     });
 
@@ -102,7 +106,7 @@ function loadStory(){
       story.maintext = "*You are in the break room at work listening to the TV. Suddenly a news flash comes on and some woman is babbling about a zombie virus.*";
       story.option1 = "`(1) Keep listening`";
       story.option2 = "`(2) Turn the TV off`";
-      story.option3 = "Write to @redbot which option you chose. Go back a step with 'back' or start over with 'reset'";
+      story.option3 = "Write to @redbot which option you chose. Go back a step with `back` or start over with `reset`";
       story.options = 3;
       story.image = "https://media.giphy.com/media/3xz2BuuYbARSNcBBsI/giphy.gif";
       whereAmI = 2;
