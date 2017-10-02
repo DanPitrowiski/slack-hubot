@@ -25,6 +25,11 @@ var story = {
 
 module.exports = function(robot) {
 
+    robot.respond(/start over|reset/i, function(msg) {
+      whereAmI = 1;
+      msg.send("Back to the beginning. Ask Adventure Bot to 'start' to try again)");
+    });
+
     robot.respond(/start/i, function(msg) {
       loadStory();
       msg.send(story.maintext);
