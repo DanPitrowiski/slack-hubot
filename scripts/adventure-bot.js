@@ -14,7 +14,7 @@ EXAMPLES OF THE KEY HUBOT FUNCTIONS
 var whereAmI = 1;
 var history = [1];
 var historySkip = 0;
-var steps = 0;
+var steps = -1;
 var story = {
   maintext: "Test",
   option1: "Option1",
@@ -27,15 +27,16 @@ module.exports = function(robot) {
 
     robot.respond(/start over|reset/i, function(msg) {
       whereAmI = 1;
+      history = [1];
       msg.send("Back to the beginning. Ask Adventure Bot to 'start' to try again)");
     });
 
     robot.respond(/start/i, function(msg) {
       loadStory();
-      msg.send(story.maintext);
       msg.send(story.option1);
       if(story.options > 1){msg.send(story.option2)};
       if(story.options > 2){msg.send(story.option3)};
+      msg.send(story.maintext);
       msg.send(whereAmI);
     });
 
@@ -45,37 +46,37 @@ module.exports = function(robot) {
       for (i=0; i < steps; i++){
         msg.send("Where am I?" + history[i]);
       };
-      msg.send(story.maintext);
       msg.send(story.option1);
       if(story.options > 1){msg.send(story.option2)};
       if(story.options > 2){msg.send(story.option3)};
+      msg.send(story.maintext);
     });
 
     robot.respond(/1/i, function(msg) {
       whereAmI = whereAmI + .1;
       loadStory();
-      msg.send(story.maintext);
       msg.send(story.option1);
       if(story.options > 1){msg.send(story.option2)};
       if(story.options > 2){msg.send(story.option3)};
+      msg.send(story.maintext);
     });
 
     robot.respond(/2/i, function(msg) {
       whereAmI = whereAmI + .2;
       loadStory();
-      msg.send(story.maintext);
       msg.send(story.option1);
       if(story.options > 1){msg.send(story.option2)};
       if(story.options > 2){msg.send(story.option3)};
+      msg.send(story.maintext);
     });
 
     robot.respond(/3/i, function(msg) {
       whereAmI = whereAmI + .3;
       loadStory();
-      msg.send(story.maintext);
       msg.send(story.option1);
       if(story.options > 1){msg.send(story.option2)};
       if(story.options > 2){msg.send(story.option3)};
+      msg.send(story.maintext);
     });
 
 };
@@ -86,11 +87,10 @@ function setHistory(){
     steps++;
     history[steps] = whereAmI;
   } else {
-    whereAmI = history[steps];
-    steps >= 0 ? steps-- : "";
-    history[steps] = whereAmI;
-    historySkip = 1;
+    steps > 0 ? steps-- : "";
+    whereAmI = history[steps]
   }
+  historySkip = 0;
 }
 
 function loadStory(){
