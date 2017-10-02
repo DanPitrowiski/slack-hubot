@@ -1,5 +1,5 @@
 // Description:
-// A short adventure if I can 
+// A short adventure with no ending.
 //
 // Author:
 // danpitrowiski
@@ -26,7 +26,7 @@ module.exports = function(robot) {
     robot.respond(/start over|reset/i, function(msg) {
       whereAmI = 1;
       history = [1];
-      msg.send("Back to the beginning. Ask Adventure Bot to 'start' to try again)");
+      msg.send("Back to the beginning. Ask Redbot to 'start' to try again)");
     });
 
     robot.respond(/start/i, function(msg) {
