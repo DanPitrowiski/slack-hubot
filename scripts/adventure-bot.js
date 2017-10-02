@@ -35,14 +35,18 @@ module.exports = function(robot) {
     robot.respond(/start/i, function(msg) {
       loadStory();
       msg.send(story.maintext);
-      setTimeout(function(){},300);
-      msg.send(story.option1);
-      setTimeout(function(){},300);
-      if(story.options > 1){msg.send(story.option2)};
-      setTimeout(function(){},300);
-      if(story.options > 2){msg.send(story.option3)};
-      setTimeout(function(){},300);
-      msg.send(story.image);
+      setTimeout(function(){
+        msg.send(story.option1);
+      },300);
+      setTimeout(function(){
+        if(story.options > 1){msg.send(story.option2)};
+      },300);
+      setTimeout(function(){
+        if(story.options > 2){msg.send(story.option3)};
+      },300);
+      setTimeout(function(){
+        msg.send(story.image);
+      },300);
     });
 
     robot.respond(/back/i, function(msg) {
