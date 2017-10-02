@@ -100,7 +100,7 @@ function setHistory(){
     history[steps] = whereAmI;
   } else {
     steps > 0 ? steps-- : "";
-    whereAmI = history[steps]
+    whereAmI = history[steps];
   }
   historySkip = 0;
 }
@@ -149,6 +149,13 @@ function loadStory(){
         story.options = ">*1* - Attack zombie Brad\n>*2* - Attack Brad your boss\n>*2* - Run away";
         whereAmI = 7;
         story.image = "https://www.photopinups.org/wp-content/uploads/2013/06/must_resist.jpg";
+        return;
+    }
+    else {
+        story.maintext = "_You've either hit the end of the story or that option doesn't exist_";
+        story.options = "";
+        whereAmI = history[steps-1];
+        story.image = "";
         return;
     }
 }
