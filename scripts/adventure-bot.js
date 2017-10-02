@@ -146,15 +146,16 @@ function loadStory(){
     }
     if (whereAmI === 4.2){
         story.maintext = "*You eat the rest of your lunch and then start on Brad's. He'll never know. You fall asleep after your two meals... You wake up to Brad storming into the kitchen!*";
-        story.options = ">*1* - Attack zombie Brad\n>*2* - Attack Brad your boss\n>*2* - Run away";
+        story.options = ">*1* - Attack zombie Brad\n>*2* - Attack Brad your boss\n>*3* - Run away";
         whereAmI = 7;
         story.image = "https://www.photopinups.org/wp-content/uploads/2013/06/must_resist.jpg";
         return;
     }
     else {
+        whereAmI = Math.floor(whereAmI);
         story.maintext = "_You've either hit the end of the story or that option doesn't exist_";
         story.options = "";
-        whereAmI = history[steps-1];
+        steps > 0 ? steps-- : "";
         story.image = "";
         return;
     }
