@@ -21,6 +21,7 @@ var story = {
   option2: "Option2",
   option3: "Option3",
   options: 3,
+  image: "",
 };
 
 module.exports = function(robot) {
@@ -33,50 +34,51 @@ module.exports = function(robot) {
 
     robot.respond(/start/i, function(msg) {
       loadStory();
+      msg.send(story.maintext);
       msg.send(story.option1);
       if(story.options > 1){msg.send(story.option2)};
       if(story.options > 2){msg.send(story.option3)};
-      msg.send(story.maintext);
-      msg.send(whereAmI);
+      msg.send(story.image);
     });
 
     robot.respond(/back/i, function(msg) {
       historySkip = 1;
       loadStory();
-      for (i=0; i < steps; i++){
-        msg.send("Where am I?" + history[i]);
-      };
+      msg.send(story.maintext);
       msg.send(story.option1);
       if(story.options > 1){msg.send(story.option2)};
       if(story.options > 2){msg.send(story.option3)};
-      msg.send(story.maintext);
+      msg.send(story.image);
     });
 
     robot.respond(/1/i, function(msg) {
       whereAmI = whereAmI + .1;
       loadStory();
+      msg.send(story.maintext);
       msg.send(story.option1);
       if(story.options > 1){msg.send(story.option2)};
       if(story.options > 2){msg.send(story.option3)};
-      msg.send(story.maintext);
+      msg.send(story.image);
     });
 
     robot.respond(/2/i, function(msg) {
       whereAmI = whereAmI + .2;
       loadStory();
+      msg.send(story.maintext);
       msg.send(story.option1);
       if(story.options > 1){msg.send(story.option2)};
       if(story.options > 2){msg.send(story.option3)};
-      msg.send(story.maintext);
+      msg.send(story.image);
     });
 
     robot.respond(/3/i, function(msg) {
       whereAmI = whereAmI + .3;
       loadStory();
+      msg.send(story.maintext);
       msg.send(story.option1);
       if(story.options > 1){msg.send(story.option2)};
       if(story.options > 2){msg.send(story.option3)};
-      msg.send(story.maintext);
+      msg.send(story.image);
     });
 
 };
@@ -102,6 +104,7 @@ function loadStory(){
       story.option2 = "(2) Turn the TV off";
       story.option3 = "Write to @adventure-bot which option you choose. Write 'back' to return to the previous step.";
       story.options = 3;
+      story.image = "https://media.giphy.com/media/3xz2BuuYbARSNcBBsI/giphy.gif";
       whereAmI = 2;
     }
     if (whereAmI === 2.1){
@@ -109,6 +112,7 @@ function loadStory(){
         story.option1 = "(1) Check the break room for something";
         story.option2 = "(2) Head back into the store and see what other people know";
         story.options = 2;
+        story.image = "https://media.giphy.com/media/9DFSyoxNE3nJS/giphy.gif";
         whereAmI = 3;
     }
     if (whereAmI === 2.2){
@@ -117,6 +121,7 @@ function loadStory(){
         story.option2 = "(2) Keep eating, you need more time";
         story.options = 2;
         whereAmI = 4;
+        story.image = "https://media.giphy.com/media/3KCOFfdqmptLi/giphy.gif";
     }
     if (whereAmI === 3.1 ){
         story.maintext = "You look around the break room. There are plastic knives and forks. Nothing you could use as a weapon.";
@@ -124,6 +129,7 @@ function loadStory(){
         story.option2 = "(2) Call your Mom, she might know something";
         story.options = 2;
         whereAmI = 5;
+        story.image = "https://media.giphy.com/media/l41lFw057lAJQMwg0/giphy.gif";
     }
 
     if (whereAmI === 4.1 || whereAmI === 3.2 || whereAmI === 5.1){
@@ -133,5 +139,6 @@ function loadStory(){
         story.option3 = "(3) Call your Mom";
         story.options = 3;
         whereAmI = 6;
+        story.image = "https://media.giphy.com/media/yoJC2qNujv3gJWP504/giphy.gif";
     }
 }
