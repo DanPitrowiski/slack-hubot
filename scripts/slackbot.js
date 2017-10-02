@@ -12,24 +12,15 @@
 //  <trigger> - <what the hear trigger does>
 //
 // Notes:
-//
-//
+
 // Author:
 // danpitrowiski
 //
-
-// module.exports = function(robot) {
-//    robot.hear(/javascript/i, function(msg) {
-//      return msg.send("I love coding!");
-//    });
-// }
-
 /************************************
 
 EXAMPLES OF THE KEY HUBOT FUNCTIONS
 
 ************************************/
-
 
 var food;
 food = ["https://i.imgur.com/ayPsxfP.gifv","http://img.skitch.com/20100714-d6q52xajfh4cimxr3888yb77ru.jpg"];
@@ -48,11 +39,11 @@ module.exports = function(robot) {
     return msg.send(msg.random(squirrels));
   });
 
-  robot.respond(/hi|hello/i, function(msg) {
-    msg.send("Howdy Dan!");
-    msg.send("How are you?");
-    return;
-  });
+    robot.respond(/hi|hello/i, function(msg) {
+      msg.send("How Dan are you?");
+      awwPic();
+      return;
+    });
 
   // Random Example
   //If a user enters 'ship it' we return a random squirrel, which is popular for symbolizing shipping something with engineers
