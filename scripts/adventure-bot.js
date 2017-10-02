@@ -39,10 +39,7 @@ module.exports = function(robot) {
         msg.send(story.option1);
       },300);
       setTimeout(function(){
-        if(story.options > 1){msg.send(story.option2)};
-      },300);
-      setTimeout(function(){
-        if(story.options > 2){msg.send(story.option3)};
+        msg.send("Write to @redbot which option you choose. Go back a step with `back` or start over with `reset`";)
       },300);
       setTimeout(function(){
         msg.send(story.image);
@@ -108,9 +105,7 @@ function loadStory(){
 
   if (whereAmI === 1){
       story.maintext = "*You are in the break room at work listening to the TV. Suddenly a news flash comes on and some woman is babbling about a zombie virus.*";
-      story.option1 = ">(1) Keep listening\n>(2) Turn the TV off";
-      story.option2 = "`(2) Turn the TV off`";
-      story.option3 = ">Write to @redbot which option you chose. Go back a step with `back` or start over with `reset`";
+      story.option1 = ">*1* - Keep listening\n>*2* Turn the TV off";
       story.options = 3;
       story.image = "https://media.giphy.com/media/3xz2BuuYbARSNcBBsI/giphy.gif";
       whereAmI = 2;
