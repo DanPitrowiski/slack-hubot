@@ -99,7 +99,7 @@ function loadStory(){
   setHistory();
 
   if (whereAmI === 1){
-      story.maintext = "You are in the break room at work listening to the TV. Suddenly a news flash comes on and some woman is babbling about a zombie virus.";
+      story.maintext = "*You are in the break room at work listening to the TV. Suddenly a news flash comes on and some woman is babbling about a zombie virus.*";
       story.option1 = "(1) Keep listening";
       story.option2 = "(2) Turn the TV off";
       story.option3 = "Write to @adventure-bot which option you chose. Go back a stpe with 'back' or start over with 'reset'";
