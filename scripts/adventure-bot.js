@@ -237,7 +237,7 @@ function loadStory(){
     }
 
     if (whereAmI === 15.1 || whereAmI === 16.1){
-        story.maintext = "*You grab the lunch room couch and push it in front of the door. Just as you do the door pushes open and into the couch. It's Brad! He still alive! He's holding the wound on his shoulder and trying to get in. You can see a group of zombies behind him. Maybe only a few seconds away*";
+        story.maintext = "*You grab the lunch room couch and push it in front of the door. Just as you do the door pushes open and into the couch. It's Brad! He's still alive! He's holding the wound on his shoulder and trying to get in. You can see a group of zombies behind him. Maybe only a few seconds away*";
         story.options = ">*1* - Let Brad in\n>*2* - Shut the door on Brad\n>*3* - Find a weapon to defend yourself, you can't stop them from getting in";
         story.image = "http://cdn.ientry.com/sites/webpronews/article_pics/zombiedoor.jpg";
         whereAmI = 17;
