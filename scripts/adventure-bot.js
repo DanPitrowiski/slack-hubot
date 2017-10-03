@@ -148,14 +148,23 @@ function loadStory(){
         return;
     }
 
-    if (whereAmI === 6.1){
+    if (whereAmI === 6.1 || whereAmI === 21.1){
         story.maintext = "*'Brad! Joane! You won't believe what I just saw on the news!' Just then, a shambling man with blood all over his face and shirt, enters through the sliding doors and is headed towards Brad.*";
         story.options = ">*1* - Yell for Brad to get away\n>*2* - Brads a goner! Save Joane!";
         story.image = "http://barrelstrengthconsulting.com/wp-content/uploads/2013/09/Shaun-of-the-Dead.jpg";
         whereAmI = 7;
         return;
     }
+
     if (whereAmI === 6.2){
+        story.maintext = "*You call your Mom. Her phone is busy. Weird... Her cellphone is never busy.*";
+        story.options = ">*1* - Talk to Brad and Joane about the news";
+        story.image = "http://bit.ly/2wu7PTQ";
+        whereAmI = 21;
+        return;
+    }
+
+    if (whereAmI === 5.2){
         story.maintext = "*You call your Mom. Her phone is busy. Weird... Her cellphone is never busy.*";
         story.options = ">*1* - Go back to work";
         story.image = "http://bit.ly/2wu7PTQ";
@@ -211,7 +220,7 @@ function loadStory(){
         return;
     }
 
-    if (whereAmI === 14.1){
+    if (whereAmI === 12.1){
         story.maintext = "*You reach the break room and slam the door. You turn to Joane and try to explain whats happening. 'Joane I saw something on the news. They said their are zombies out there. I thought they were making it up. But it's real. We need to barricade this door!'*";
         story.options = ">*1* - Barricade the door ";
         story.image = "http://www.campussafetymagazine.com/wp-content/uploads/2013/02/L-HCDE6.jpg";
